@@ -215,6 +215,7 @@ runs:
             [[ -n "${{ inputs.auto_patch }}" ]] && make_command="${make_command} -p ${{ inputs.auto_patch }}"
             [[ -n "${{ inputs.kernel_sign }}" ]] && make_command="${make_command} -n ${{ inputs.kernel_sign }}"
             [[ -n "${{ inputs.kernel_toolchain }}" ]] && make_command="${make_command} -t ${{ inputs.kernel_toolchain }}"
+            [[ -n "${{ inputs.kernel_config }}" ]] && make_command="${make_command} -n ${{ inputs.kernel_config }}"
             sudo ./recompile ${make_command}
 
             cd ${GITHUB_ACTION_PATH}
